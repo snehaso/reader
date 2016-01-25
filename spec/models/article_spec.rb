@@ -19,4 +19,9 @@ describe Article do
     expect(article.title).to eq("Title 1")
     expect(article.text).to eq("Text to store in database for a user")
   end
+
+  it "short text for displaying article" do
+    article = create(:article, url: "https://site-1.com", text: "random " * 70, title: 'title-1')
+    expect(article.short_text).to eq(("random " * Article::WORDS_IN_SHORT_TEXT).strip)
+  end
 end
