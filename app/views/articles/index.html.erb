@@ -1,8 +1,22 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <%= simple_form_for Article.new, html: { class: 'navbar-form navbar-left' } do |f| %>
+      <div class="form-group">
+        <%= f.input :url, placeholder: 'Paste link', class: 'form-control' %>
+        <%= f.button :submit, class: 'btn btn-default' %>
+      </div>
+    <% end %>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to("Sign out", destroy_user_session_path, method: :delete) %></li>
+    </ul>
+  </div>
+</nav>
+<%= flash[:error] %>
 <% @articles.each do |article| %>
 <div class="list-group">
-  <a href="#" class="list-group-item active">
+  <%= link_to(article_path(article), class: 'list-group-item active') do %>
     <h4 class="list-group-item-heading"><%= article.title %></h4>
     <p class="list-group-item-text"><%= article.short_text %></p>
-  </a>
+  <% end %>
 </div>
 <% end %>
