@@ -1,3 +1,46 @@
-<div class="well well-lg">
-  <%= @article.text %>
+<div id="reader-container" >
+  <div class="well well-sm word-container">word</div>
+  <ul class="nav nav-pills">
+    <li role="presentation">
+      <button id="start-reading-button" type="button" class="btn btn-default" aria-label="Left Align">Read
+        <span aria-hidden="true" title="Read"></span>
+      </button>
+    <li role="presentation">
+      <button id="glyphicon-resume-button" type="button" class="btn btn-default" aria-label="Left Align">Resume
+        <span class="glyphicon glyphicon-play" aria-hidden="true" title="Resume"></span>
+      </button>
+    </li>
+    <li role="presentation">
+      <button id="glyphicon-pause-button" type="button" class="btn btn-default" aria-label="Left Align">Pause
+        <span class="glyphicon glyphicon-pause" aria-hidden="true" title="Pause"></span>
+      </button>
+    </li>
+  </ul>
+  <div class="reading-speed btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    <span class="selection" value="50">50wpm</span><span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="#" value=5>5wpm</a></li>
+      <li><a href="#" value=50>50wpm</a></li>
+      <li><a href="#" value=100>100wpm</a></li>
+      <li><a href="#" value=150>150wpm</a></li>
+      <li><a href="#" value=200>200wpm</a></li>
+      <li><a href="#" value=250>250wpm</a></li>
+      <li><a href="#" value=300>300wpm</a></li>
+    </ul>
+  </div>
+  <div class="color-scheme btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    <span class="selection" value="black_on_white">Black on White</span><span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="#" value="black_on_white">Black on White</a></li>
+      <li><a href="#" value="random">random</a></li>
+    </ul>
+  </div>
+  <div class="well well-lg">
+    <%= @article.text %>
+  </div>
 </div>
+
