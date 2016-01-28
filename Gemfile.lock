@@ -176,6 +176,9 @@ GEM
     tilt (2.0.2)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    uglifier (2.7.2)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
     warden (1.2.4)
       rack (>= 1.0)
     websocket-driver (0.6.3)
@@ -204,3 +207,4 @@ DEPENDENCIES
   sass-rails
   shoulda-matchers (~> 3.1.0)
   simple_form
+  uglifier

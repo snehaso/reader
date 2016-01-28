@@ -10,6 +10,7 @@ gem 'sass-rails'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
 gem 'simple_form'
+gem 'uglifier'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
