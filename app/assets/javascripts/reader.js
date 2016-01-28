@@ -61,7 +61,7 @@
   var sendWordToColoringApi = function(word){
     var colorScheme = $('.color-scheme .dropdown-toggle .selection').attr('value');
     $.ajax({
-      url: 'http://localhost:4567/color',
+      url: Reader.config.coloring_service_url,
       type: 'POST',
       contenttype:'application/json; charset=utf-8',
       data: JSON.stringify({

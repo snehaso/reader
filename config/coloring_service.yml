@@ -1,0 +1,8 @@
+development:
+  url: 'http://localhost:4567/color'
+
+test:
+  url: 'http://localhost:4567/color'
+
+production:
+  url: 'https://lit-tor-19805.herokuapp.com/color'
