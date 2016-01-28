@@ -1,28 +1,39 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# Reader
 
-* Ruby version
+Reader allows user to read faster online in color. User can select the reading speed from 5-350 words per minute. User can also chose to read black text on white background or can read in Semaphore random color theme.
 
-* System dependencies
+You can also pause while reading.
 
-* Configuration
+Signup with email and create your account. Enjoy reading!
 
-* Database creation
+## Specifications
 
-* Database initialization
+```
+  Article
+    should validate that :url cannot be empty/falsy
+    should validate that :user cannot be empty/falsy
+    should respond to #title
+    should respond to #author
+    should respond to #text
+    should belong to user
+    extract text from given url
+    populate error if text extraction failed
+    short text for displaying article
+    ignore the articles without text
 
-* How to run the test suite
+  User
+    valid with a valid email and password
 
-* Services (job queues, cache servers, search engines, etc.)
+  Page
+    extract text from a page
 
-* Deployment instructions
+  ArticlesController
+    list articles read by user
+    create new article for given url
 
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+  ArticleReadingSpec
+    user should be able to read article at given speed and color theme
+```
