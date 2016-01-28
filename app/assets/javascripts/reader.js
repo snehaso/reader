@@ -1,12 +1,14 @@
 (function() {
   var words;
   var interval;
+  var pusherChannel;
 
   var init = function() {
     var readerContainer = $("#reader-container");
-    if(readerContainer.size() > 0) {
+    pusherChannel = $("#notification-channel").attr('value');
+    if(readerContainer.size() > 0 && pusherChannel.length > 0) {
       var pusher = new Pusher('da03829d30f7142f7f34', { encrypted: true });
-      var notificationsChannel = pusher.subscribe('notifications');
+      notificationsChannel = pusher.subscribe(pusherChannel);
 
       notificationsChannel.bind('new_notification', function(notification){
           var message = notification.message;
@@ -66,7 +68,8 @@
       contenttype:'application/json; charset=utf-8',
       data: JSON.stringify({
         words: [word],
-        color_scheme: colorScheme
+        color_scheme: colorScheme,
+        pusher_notification_channel: pusherChannel
       }),
       crossDomain: true,
       dataType:'json',

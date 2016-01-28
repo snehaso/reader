@@ -42,5 +42,6 @@
   <div class="well well-lg">
     <%= @article.text %>
   </div>
+  <input type="hidden" id="notification-channel" value=<%= "user_#{Rails.env}_#{current_user.id}"%>>
 </div>
 
